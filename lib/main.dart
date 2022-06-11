@@ -15,8 +15,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(
-        body: Center(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Rays Amazon Clone'),
+        ),
+        body: const Center(
           child: Text('Flutter Demo Home Page'),
         ),
       ),
