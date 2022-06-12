@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Amazon Clone',
       theme: ThemeData(
         scaffoldBackgroundColor: GlobalVariables.backgroundColor,
+        colorScheme: const ColorScheme.light(
+          primary: GlobalVariables.secondaryColor,
+        ),
         appBarTheme: const AppBarTheme(
           elevation: 0,
           iconTheme: IconThemeData(
@@ -29,13 +32,14 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             const Center(
-                child: Text(
-              'Flutter Demo Home Page',
-            )),
+              child: Text(
+                'Flutter Demo Home Page',
+              ),
+            ),
             ElevatedButton(
               onPressed: () {},
               child: Text('Click Me'),
-            ),
+            )
           ],
         ),
       ),
