@@ -1,6 +1,9 @@
 import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:flutter/material.dart';
 
+import '../../common/custom_button.dart';
+import '../../common/widgets/custom_textfield.dart';
+
 enum Auth {
   signin,
   signup,
@@ -20,7 +23,7 @@ class _AuthScreenState extends State<AuthScreen> {
   final _signInFormKey = GlobalKey<FormState>();
 
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordlController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
 
   // Prevents Memory Leeks
@@ -28,7 +31,7 @@ class _AuthScreenState extends State<AuthScreen> {
   void dispose() {
     super.dispose();
     _emailController.dispose();
-    _passwordlController.dispose();
+    _passwordController.dispose();
     _nameController.dispose();
   }
 
@@ -67,14 +70,34 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
               ),
               if (_auth == Auth.signup)
-                Form(
-                  key: _signUpFormKey,
-                  child: Column(
-                    children: [
-                      CustomTextField(
-                        controller: _emailController,
-                      ),
-                    ],
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  color: GlobalVariables.backgroundColor,
+                  child: Form(
+                    key: _signUpFormKey,
+                    child: Column(
+                      children: [
+                        CustomTextField(
+                          controller: _nameController,
+                          hintText: 'Name',
+                        ),
+                        const SizedBox(height: 10),
+                        CustomTextField(
+                          controller: _emailController,
+                          hintText: 'Email',
+                        ),
+                        const SizedBox(height: 10),
+                        CustomTextField(
+                          controller: _passwordController,
+                          hintText: 'Password',
+                        ),
+                        const SizedBox(height: 10),
+                        CustomButton(
+                          text: 'Sign Up',
+                          onTap: () {},
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ListTile(
