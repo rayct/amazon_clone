@@ -1,14 +1,20 @@
-console.log('Hello, World');
-// print ('Hello, World');
+// IMPORTS FROM PACKAGES
 const express = require('express');
-// import 'package:express/express.dart';
-const PORT = 3000;
 
+// IMPORTS FROM OTHER FILES
+const authRouter = require('./routes/auth');
+
+// INIT
+const PORT = 3000;
 const app = express();
 
-// CREATING AN API
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`connected at port ${PORT} hello`);
+  console.log(`connected at port ${PORT}`);
 });
-//localhost
-// 127.0.0.1 = Computer is Basically talking to it's self
+
+// CREATING AN API
+// GET, PUT, POST, DELETE, UPDATE -> *CRUD = CREATE, READ, UPDATE, DELETE*
+// http://<youripadress/hello-ray>
+// app.get('/', (req, res) => {
+//   res.json({ name: 'hello ray' });
+// });
