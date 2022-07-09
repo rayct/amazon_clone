@@ -11,6 +11,7 @@ const app = express();
 const DB = 'mongodb+srv://ray:xAgxPJg1PTvbv8t4@cluster0.htp6l.mongodb.net/?retryWrites=true&w=majority'
 
 // MIDDLEWARE
+app.use(express.json());
 app.use(authRouter);
 
 // Connections
@@ -31,3 +32,4 @@ app.listen(PORT, '0.0.0.0', () => {
 // app.get('/', (req, res) => {
 //   res.json({ name: 'hello ray' });
 // });
+ 

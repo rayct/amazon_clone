@@ -8,7 +8,9 @@ authRouter.post('/api/signup', async (req, res) => {
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-        return res.status(400).json({ msg: 'User with the same email already exists!'})
+        return res
+            .status(400)
+            .json({ msg: 'User with the same email already exists!' })
     }
 
     let user = new User({
@@ -17,8 +19,10 @@ authRouter.post('/api/signup', async (req, res) => {
         name,
     })
     user = await user.save();
+    res.json(user);
     // post that data into database
     // return that data to the user
 });
 
-module.exports = authRouter;
+module.exports = authRouter;  
+ 
