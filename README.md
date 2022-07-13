@@ -1,6 +1,6 @@
 # amazon_clone
 
-A New Flutter project.
+A Amazon Clone App - Works on Android & iOS!
 
 ## Getting Started
 
