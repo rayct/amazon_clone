@@ -1,6 +1,6 @@
 # amazon_clone
 
-A Amazon Clone App - Works on Android & iOS!
+Amazon Clone App - Works on Android & iOS!
 
 ## Getting Started
 
